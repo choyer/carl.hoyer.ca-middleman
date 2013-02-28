@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <title><%= current_page.data.title %> | carl.hoyer.ca</title>
+
+        <meta name="author" content="<%= current_page.data.author %>">
+        <meta name="description" content="<%= current_page.data.description %>">
+        <meta name="keywords" content="<%= current_page.data.keywords %>">
+
+        <script type="text/javascript" src="//use.typekit.net/oir0uci.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <link rel="stylesheet" href="/css/site.css">
+    </head>
+    <body>
+
+        <div id="persistent-bar">
+            <a href="/"><img src="/img/haeckel_antilope.png" width="175px" height="175px" class="center"></a>
+            <div class="masthead center">Carl Hoyer</div>
+            <div class="wingdoozle">
+                <%= partial "wingdoozle" %>
+            </div>
+            <%= partial "main-nav" %>
+            <img src="/img/flourish-line-a.png" class="flourish-divider center">
+            <div class="social">
+                <%= partial "socialite" %>
+            </div>
+        </div>
+
+        <div id="main">
+            <article class="post">
+                <header>
+                    <time class="postdate" datetime="<%= current_article.date.strftime('%Y-%m-%d') %>" pubdate><%= current_article.date.strftime('%B %e, %Y') %></time>
+                    <h1 class="postitle"><%= data.page.title %></h1>
+                </header>
+                <%= yield %>
+                <footer>
+                    <div class="meta center">
+                        <h5>Meta</h5>
+                        <p><%= data.page.tags %></p>
+                    </div>
+                    <div class="porpema"><img src="/img/haeckel_porpema.png" alt="end of article" class="center"></div>
+                    <div class="nav-home"><a href="/"><span class="arrow">←</span> Back to homepage</a></div>
+                </footer>
+
+            </article>
+
+            <section id="comments">
+                <h2>Comments</h2>
+                <%= partial(:disqus, :locals => { :disqus_identifier => "http://carl.hoyer.ca" + current_page.url, :disqus_url => "http://carl.hoyer.ca" + current_page.url }) %>
+            </section>
+
+            <%= partial "footer" %>
+
+        </div>
+
+        <!-- Google Analytics to go here -->
+
+    </body>
+</html>

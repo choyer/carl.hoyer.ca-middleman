@@ -1,0 +1,21 @@
+---
+title: Home
+---
+<% article = blog.articles[0] %>
+<article class="post">
+    <header>
+        <time class="postdate" datetime="<%= article.date.strftime('%Y-%m-%d') %>" pubdate><%= article.date.strftime('%B %e, %Y') %></time>
+        <h1 class="postitle"><%= article.title %></h1>
+    </header>
+    <%= article.body %>
+    <footer>
+        <div class="meta center">
+            <h5>Meta</h5>
+            <p><%= article.tags.join(', ') %></p>
+        </div>
+        <div class="porpema"><img src="/img/haeckel_porpema.png" alt="end of article" class="center"></div>
+    </footer>
+
+</article>
+
+<div class="nav-home text-right"><a href="/writings">More writings <span class="arrow">→</span></a></div>

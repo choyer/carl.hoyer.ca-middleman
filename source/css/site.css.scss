@@ -1,0 +1,296 @@
+// carl.hoyer.ca - hand coded on one wheel
+
+// HTML5 Boilerplate + Normalize
+@import "_vendor/normalize.css";
+@import "_vendor/html5bp.css";
+
+// Grid
+//@import "_layout/grid";
+
+// Variables
+$main-nav-color: #cb0000;
+$hr-color-red: #efbcbb;
+
+// The good stuff
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background-color: #fcfcfa;
+	font-size: 17px;
+  	line-height: 150%;
+}
+
+p { color: #4d4d4d; }
+
+a {
+	color: $main-nav-color;
+}
+
+a:hover {
+	color: darken($main-nav-color, 5%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #111;
+	line-height: 115%;
+}
+
+hr {
+	border: 0;
+	color: $hr-color-red;
+	background-color: $hr-color-red;
+	height: 1px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.flourish-divider {
+	opacity: 0.2;
+	height: 24px;
+	width: 200px;
+}
+
+p.lead {
+	font-size: 1.3em;
+	line-height: 1.6em;
+}
+
+#persistent-bar {
+	position: fixed;
+	top: 0; left: 0;
+	height: 100%;
+	width: 300px;
+	background-color: #f9f9f1;
+	border-right: 1px solid #e2e2e2;
+}
+
+#persistent-bar .masthead {
+	font-size: 1.85em;
+	font-family: "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2";
+	color: #222;
+}
+
+#persistent-bar .social {
+	width: 200px;
+    margin: 0px auto;
+	margin-top: 2em;
+	margin-bottom: 3.5em;
+}
+
+#persistent-bar .social ul {
+	display: block;
+}
+
+#persistent-bar .social li {
+	float: left;
+	padding-right: 10px;
+}
+
+#persistent-bar .social li a {
+	opacity: 0.55;
+}
+
+#persistent-bar .social li a:hover {
+	opacity: 0.85;
+}
+
+#persistent-bar .wingdoozle {
+	padding: 15px 35px;
+	font-size: 0.9em;
+	font-family: "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2";
+	color: lighten(#4d4d4d, 25%);
+	text-align: center;
+}
+
+.main-nav {
+	font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2";
+	font-size: 1.75em;
+	line-height: 145%;
+	padding: 1em 0 1em 0;
+}
+
+.main-nav a {
+	color: $main-nav-color;
+	text-decoration: none;
+}
+
+a .nav-dash {
+	color: #f9f9f1;
+}
+
+a:hover .nav-dash {
+	color: $main-nav-color;
+	text-decoration: none;
+}
+
+.main-nav a:hover {
+	color: darken($main-nav-color, 5%);
+	text-decoration: none;
+}
+
+section.coderwall {
+	position: relative;
+}
+
+#main {
+	position: absolute;
+	left: 300px;
+	min-width: 320px;
+	max-width: 660px;
+	padding: 25px;
+}
+
+.post footer {
+	margin-top: 3em;
+}
+
+.postdate {
+	color: lighten(#4d4d4d, 35%);
+	font-size: 0.75em;
+	font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2";
+	font-weight: normal;
+}
+
+.meta {
+	margin-bottom: 1.5em;
+}
+
+.meta h5 {
+	margin-bottom: -1.5em;
+	color: lighten(#4d4d4d, 35%);
+	font-size: .85em;
+}
+
+.meta p {
+	color: lighten(#4d4d4d, 15%);
+	font-size: .85em;
+}
+
+.nav-home {
+	margin-top: 2em;
+}
+
+#comments {
+	margin-top: 1.5em;
+	border-top: 1px solid #e2e2e2;
+}
+
+#pgfooter {
+	color: #cdcdcd;
+	font-size: 0.75em;
+	border-top: 1px solid $hr-color-red;
+	margin-top: 1em;
+}
+
+#pgfooter p {
+	text-align: center;
+	color: #b9b9b9;
+}
+
+#pgfooter a {
+	text-decoration: none;
+	color: darken(#bbb, 25%);
+}
+
+#pgfooter a:hover {
+	text-decoration: underline;
+	color: darken(#bbb, 50%);
+}
+
+.icon-attrib {
+	padding-left: 3px;
+}
+
+a .icon-attrib {
+	opacity: 0.3;
+	display: block;
+	margin-top: 0.5em;
+}
+
+a:hover .icon-attrib {
+	opacity: 0.75;
+}
+
+.nav-home {
+	font-size: 0.9em;
+	font-family: "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2";
+}
+
+.nav-home a {
+	text-decoration: none;
+	color: lighten(#4d4d4d, 30%);
+}
+
+.nav-home a:hover {
+	text-decoration: none;
+	color: darken(#4d4d4d, 35%);
+}
+
+.nav-home .arrow {
+	color: $main-nav-color;
+}
+
+#archives h1 {
+
+}
+
+#archives h2 {
+	color: lighten(#4d4d4d, 20%);
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #e2e2e2;
+	margin-top: 1.9em;
+}
+
+#archives a {
+	text-decoration: none;
+}
+
+#archives a:hover {
+	text-decoration: underline;
+}
+
+#archives ul, #archives li {
+	padding-left: 0;
+}
+
+#archives .postdate {
+	padding-left: 3em;
+}
+
+#archives .posttag-wrapper {
+	font-size: 0.75em;
+	padding-left: 0.75em;
+}
+
+#archives .posttag-bookend {
+	color: $hr-color-red;
+}
+
+#archives .posttags {
+	color: lighten(#4d4d4d, 25%);
+}
