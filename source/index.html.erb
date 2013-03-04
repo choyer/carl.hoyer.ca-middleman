@@ -5,13 +5,12 @@ title: Home
 <article class="post">
     <header>
         <time class="postdate" datetime="<%= article.date.strftime('%Y-%m-%d') %>" pubdate><%= article.date.strftime('%B %e, %Y') %></time>
-        <h1 class="postitle"><%= article.title %></h1>
+        <h1 class="mega"><%= article.title %></h1>
     </header>
     <%= article.body %>
     <footer>
         <div class="meta center">
-            <h5>Meta</h5>
-            <p><%= article.tags.join(', ') %></p>
+            <span class="posttag-bookend">{</span> <span class="posttags"><%= data.page.tags %></span> <span class="posttag-bookend">}</span> <sup>Meta</sup>
         </div>
         <div class="porpema"><img src="/img/haeckel_porpema.png" alt="end of article" class="center"></div>
     </footer>

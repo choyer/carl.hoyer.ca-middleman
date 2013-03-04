@@ -24,6 +24,7 @@
 @import "_vendor/normalize.css";
 @import "_vendor/html5bp.css";
 @import "typeplate";
+@import "_vendor/fontello.css";
 
 
 // ==========================================================================
@@ -66,6 +67,10 @@ ul {
     list-style-type: none;
     margin: 0;
 }
+
+// Create more breathing room on headers
+
+h2 { margin-top: 1.1em; }
 
 
 // $H e l p e r s
@@ -130,27 +135,23 @@ img.center { display: block; margin-left: auto; margin-right: auto; }
 	text-decoration: none;
 }
 
-#persistent-bar .social {
-	width: 200px;
+.social-nav {
+	width: 10em;
     margin: 0px auto;
 	margin-top: 2em;
 	margin-bottom: 3.5em;
 }
 
-#persistent-bar .social ul {
-	display: block;
-}
-
-#persistent-bar .social li {
+.social-item {
 	float: left;
-	padding-right: 10px;
+	padding-right: 0.5em;
 }
 
-#persistent-bar .social li a {
+.social-nav a {
 	opacity: 0.55;
 }
 
-#persistent-bar .social li a:hover {
+.social-nav a:hover {
 	opacity: 0.85;
 }
 
@@ -168,6 +169,7 @@ section.coderwall {
 	min-width: 320px;
 	max-width: 660px;
 	padding: 25px;
+	margin-top: 1.5em;
 }
 
 // $A r t i c l e
@@ -258,18 +260,27 @@ article .meta sup {
 	color: darken(#bbb, 50%);
 }
 
-.icon-attrib {
-	padding-left: 3px;
+/* Thanks to http://css-tricks.com/centering-in-the-unknown/ */
+#pgfooter .attrib {
+	text-align: center;
 }
 
-a .icon-attrib {
-	opacity: 0.3;
-	display: block;
-	margin-top: 0.5em;
+#pgfooter .attrib:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em; /* Adjusts for spacing */
 }
 
-a:hover .icon-attrib {
-	opacity: 0.75;
+#pgfooter .centered {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100px;
+}
+
+#pgfooter .attrib-label {
+	margin-top: -0.6em;
 }
 
 .nav-home {
