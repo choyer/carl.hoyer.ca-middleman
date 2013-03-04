@@ -66,10 +66,10 @@ page "/index.html", :layout => "global"
 page "404.html", :layout => false, directory_index: false
 page "/sitemap.xml", :layout => "sitemap.xml"
 page "/feed.rss", :layout => "feed.rss"
-page "/atom.xml", :layout => "atom.xml"
-page "/atom.json", :proxy => "/json_articles.json", :layout => false, :ignore => true do
-  @atom_article = ''
-end
+#page "/atom.xml", :layout => "atom.xml"
+#page "/atom.json", :proxy => "/json_articles.json", :layout => false, :ignore => true do
+#  @atom_article = ''
+#end
 
 ###
 # Helpers

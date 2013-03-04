@@ -4,18 +4,18 @@ title: Writings
 description: The writings of Carl Hoyer, designer, programmer and sysadmin.
 homelink: true
 ---
-<div id="archives">
+<div id="archive">
 	<h1><%= current_page.data.title %></h1>
 
 	<ul>
 	  <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
 	    <li>
-	      <h2><%= year %></h2>
+	      <h2 class="gamma"><%= year %></h2>
 	      <ul>
 	        <% articles.each do |article| %>
 	          <li>
 	          	<%= link_to article.title, article %>
-	          	<span class="postdate"><%= article.date.strftime('%B %e') %></span>
+	          	<span class="postdate"><%= article.date.strftime('%b %e') %></span>
 	          	<span class="posttag-wrapper"><span class="posttag-bookend">{</span> <span class="posttags"><%= article.tags.join(', ') %></span> <span class="posttag-bookend">}</span></span>
 	          </li>
 	        <% end %>
