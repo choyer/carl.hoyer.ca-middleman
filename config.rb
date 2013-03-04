@@ -20,8 +20,8 @@ activate :s3_sync do |s3_sync|
   s3_sync.region                = 'us-east-1'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id     = ENV['AWS_ACCESS_KEY']
   s3_sync.aws_secret_access_key = ENV['AWS_SECRET']
-  #s3_sync.delete                = false # We delete stray files by default.
-  #s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
+  s3_sync.delete                = true # We delete stray files by default.
+  s3_sync.after_build           = true # We chain after the build step by default. This may not be your desired behavior...
 end
 
 activate :cloudfront do |cf|
@@ -66,7 +66,7 @@ page "/index.html", :layout => "global"
 page "404.html", :layout => false, directory_index: false
 page "/sitemap.xml", :layout => "sitemap.xml"
 page "/feed.rss", :layout => "feed.rss"
-#page "/atom.xml", :layout => "atom.xml"
+page "/atom.xml", :layout => "atom.xml"
 #page "/atom.json", :proxy => "/json_articles.json", :layout => false, :ignore => true do
 #  @atom_article = ''
 #end
@@ -95,6 +95,6 @@ configure :build do
 
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash
+  #activate :asset_hash
 
 end
