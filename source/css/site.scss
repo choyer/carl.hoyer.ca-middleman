@@ -1,17 +1,17 @@
 /*!
 +---------------------------------------------------------------------+
-|                     _   _                                    		  |
-|                    | | | |                                   		  |
-|       ___ __ _ _ __| | | |__   ___  _   _  ___ _ __ ___ __ _ 		  |
-|      / __/ _` | '__| | | '_ \ / _ \| | | |/ _ \ '__/ __/ _` |		  |
-|     | (_| (_| | |  | |_| | | | (_) | |_| |  __/ |_| (_| (_| |		  |
-|      \___\__,_|_|  |_(_)_| |_|\___/ \__, |\___|_(_)\___\__,_|		  |
-|                                      __/ |                   		  |
-|                                     |___/                    		  |
+|                     _   _                                           |
+|                    | | | |                                          |
+|       ___ __ _ _ __| | | |__   ___  _   _  ___ _ __ ___ __ _        |
+|      / __/ _` | '__| | | '_ \ / _ \| | | |/ _ \ '__/ __/ _` |	      |
+|     | (_| (_| | |  | |_| | | | (_) | |_| |  __/ |_| (_| (_| |	      |
+|      \___\__,_|_|  |_(_)_| |_|\___/ \__, |\___|_(_)\___\__,_|	      |
+|                                      __/ |                   	      |
+|                                     |___/                           |
 |                                                                     |
 | URL: http://carl.hoyer.ca                                           |
-| Github: https://github.com/choyer/carl.hoyer.ca 			          |
-| AUTHOR: Carl Hoyer (@choyer) 										  |
+| Github: https://github.com/choyer/carl.hoyer.ca                     |
+| AUTHOR: Carl Hoyer (@choyer)                                        |
 |                                                                     |
 +---------------------------------------------------------------------+
 */
@@ -21,10 +21,10 @@
 // $I M P O R T S
 //
 // ==========================================================================
-@import "_vendor/normalize.css";
-@import "_vendor/html5bp.css";
-@import "typeplate";
-@import "_vendor/fontello.css";
+@import "_vendor/normalize";
+@import "_vendor/html5bp";
+@import "_vendor/typeplate";
+@import "_vendor/fontello";
 
 
 // ==========================================================================
@@ -58,10 +58,19 @@ body {
 	background-color: $background-color;
 }
 
-a { color: $primary-nav-color; text-decoration: none; }
-a:hover { color: darken($primary-nav-color, 7%); text-decoration: underline; }
+a {
+	color: $primary-nav-color;
+	text-decoration: none;
+}
 
-hr { border-top: 1px solid $hr-color; }
+a:hover {
+	color: darken($primary-nav-color, 7%);
+	text-decoration: underline;
+}
+
+hr {
+	border-top: 1px solid $hr-color;
+}
 
 ul {
     list-style-type: none;
@@ -70,18 +79,37 @@ ul {
 
 // Create more breathing room on headers
 
-h2 { margin-top: 1.1em; }
+h2 {
+	margin-top: 1.1em;
+}
 
 
 // $H e l p e r s
 // --------------------------------------------------------------------------
 
-.center { text-align: center; }
-img.center { display: block; margin-left: auto; margin-right: auto; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.center {
+	text-align: center;
+}
 
-.flourish-divider { opacity: 0.2; height: 24px; width: 200px; }
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.flourish-divider {
+	opacity: 0.2;
+	height: 24px;
+	width: 200px;
+}
 
 
 // $P e r s i s t e n t   N a v
@@ -179,7 +207,8 @@ article .post footer {
 	margin-top: 3em;
 }
 
-article .postdate, #archive .postdate {
+article .postdate,
+#archive .postdate {
 	color: lighten($body-copy-color, 35%);
 	font-size: 0.75em;
 	font-family: $font-family-sans;
@@ -213,7 +242,8 @@ article .meta sup {
 	margin-top: 1.5em;
 }
 
-#archive ul, #archives li {
+#archive ul,
+#archives li {
 	padding-left: 0;
 }
 
