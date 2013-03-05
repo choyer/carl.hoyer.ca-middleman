@@ -60,12 +60,12 @@ body {
 
 a {
 	color: $primary-nav-color;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
-	color: darken($primary-nav-color, 7%);
-	text-decoration: underline;
+	color: $primary-nav-color;
+	text-decoration: none;
 }
 
 hr {
@@ -124,7 +124,7 @@ img.center {
 	border-right: 1px solid $nav-border-color;
 }
 
-#persistent-bar .masthead {
+#persistent-bar .masthead h1 {
 	font-weight: normal;
 	font-family: $font-family;
 }
@@ -135,6 +135,14 @@ img.center {
 	font-family: $font-family;
 	color: lighten($body-copy-color, 25%);
 	text-align: center;
+}
+
+#persistent-bar .masthead a {
+	text-decoration: none;
+}
+
+#persistent-bar .masthead a:hover {
+	text-decoration: underline;
 }
 
 .main-nav {
