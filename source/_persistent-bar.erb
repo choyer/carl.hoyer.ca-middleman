@@ -1,7 +1,7 @@
 <div id="persistent-bar">
 	<div class="masthead">
 	    <a href="/">
-	    	<img src="/img/haeckel_antilope.png" width="175px" height="175px" class="center">
+	    	<%= image_tag "haeckel_antilope.png", :alt => "Haeckel Antilope", :class => "center", :width => "175px", :height => "175px" %>
 	    	<h1 class="center">Carl Hoyer</h1>
 	    </a>
     </div>
@@ -10,7 +10,7 @@
 
     <%= partial "main-nav" %>
 
-    <img src="/img/flourish-line-b.png" class="flourish-divider center">
+    <%= image_tag "flourish-line-b.png", :alt => "flourish divider", :class => "flourish-divider center" %>
 
     <%= partial "socialite" %>
 </div>
