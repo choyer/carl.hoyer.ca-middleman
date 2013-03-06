@@ -17,7 +17,7 @@
         <script type="text/javascript" src="//use.typekit.net/oir0uci.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-        <link rel="stylesheet" href="/css/site.css">
+        <%= stylesheet_link_tag 'site' %>
     </head>
     <body>
 
@@ -34,7 +34,7 @@
                     <div class="meta center">
                         <span class="posttag-bookend">{</span> <span class="posttags"><%= data.page.tags %></span> <span class="posttag-bookend">}</span> <sup>Meta</sup>
                     </div>
-                    <div class="porpema"><img src="/img/haeckel_porpema.png" alt="end of article" class="center"></div>
+                    <div class="porpema"><%= image_tag "haeckel_porpema.png", :alt => "end of article", :class => "center" %></div>
                     <div class="nav-home"><a href="/"><span class="arrow">←</span> Back to homepage</a></div>
                 </footer>
 
