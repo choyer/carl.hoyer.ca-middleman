@@ -36,8 +36,8 @@
 // $C o l o u r
 // --------------------------------------------------------------------------
 $primary-nav-color: 		#cb0000;	// rich red
-$hr-color: 					#efbcbb;	// red
-$hr-color-alt:				#e2e2e2;	// light grey
+$accent-color: 				#efbcbb;	// red
+$accent-color-alt:			#e2e2e2;	// light grey
 $background-color: 			#fcfcfa;	// grey'ish
 $nav-background-color:		#f9f9f1;	// cream
 $nav-border-color:			#e2e2e2;	// light grey
@@ -68,8 +68,16 @@ a:hover {
 	text-decoration: none;
 }
 
+::-moz-selection {
+	background-color: darken($nav-background-color, 10%);
+}
+
+::selection {
+	background-color: darken($nav-background-color, 10%);
+}
+
 hr {
-	border-top: 1px solid $hr-color;
+	border-top: 1px solid $accent-color;
 }
 
 ul {
@@ -237,7 +245,7 @@ article .meta sup {
 #comments {
 	margin-top: 1.5em;
 	padding-top: 1em;
-	border-top: 1px solid $hr-color-alt;
+	border-top: 1px solid $accent-color-alt;
 }
 
 // $A r t i c l e   A r c h i v e s
@@ -246,7 +254,7 @@ article .meta sup {
 #archive h2 {
 	color: lighten($body-copy-color, 20%);
 	padding-bottom: 0.5em;
-	border-bottom: 1px solid $hr-color-alt;
+	border-bottom: 1px solid $accent-color-alt;
 	margin-top: 1.5em;
 }
 
@@ -265,7 +273,7 @@ article .meta sup {
 }
 
 .posttag-bookend {
-	color: $hr-color;
+	color: $primary-nav-color;
 }
 
 .posttags {
@@ -279,7 +287,7 @@ article .meta sup {
 #pgfooter {
 	color: #cdcdcd;
 	font-size: 0.75em;
-	border-top: 1px solid $hr-color;
+	border-top: 1px solid $accent-color;
 	margin-top: 1em;
 }
 
