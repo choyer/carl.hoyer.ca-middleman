@@ -8,6 +8,7 @@ activate :directory_indexes
 set :markdown_engine, :redcarpet
 set :markdown, :layout_engine => :erb,
                :tables => true,
+               :fenced_code_blocks => true,
                :autolink => true,
                :smartypants => true
 
