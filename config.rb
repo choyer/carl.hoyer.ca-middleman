@@ -44,7 +44,8 @@ end
 ###
 # Code hilighting via pygments
 ###
-activate :syntax
+activate :syntax,
+         :cssclass => "syntax-highlight"
 
 ###
 # Compass
