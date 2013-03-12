@@ -160,5 +160,3 @@ This is just a start. Some ideas for future inclusion ...
 
 - Deploying/Sync'ing the EE database
 - Full multi-environment support (e.g. development, staging) mirroring [NSM Config Bootstrap](http://ee-garage.com/nsm-config-bootstrap). Currently only support for deployment from local to production.
-Window size: x
-Viewport size: x
