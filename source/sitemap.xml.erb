@@ -1,0 +1,14 @@
+<% base_url = "http://carl.hoyer.ca/" %>
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% pages.each do |p| %>
+  <url>
+    <loc><%= base_url + p.destination_path.gsub('index.html','') %></loc>
+    <% if priority = p.metadata[:page]['priority'] %>
+      <priority><%= priority %> </priority>
+    <% end %>
+    <lastmod><%= File.new(p.source_file).mtime.to_date %></lastmod>
+  </url>
+<% end %>
+</urlset>
