@@ -20,6 +20,12 @@ code, pre {
 	font-size: 0.7em;
 }
 
+p > code {
+	font-size: 0.9em;
+	background-color: #E6E1DC;
+	padding: 0.1em 0.2em;
+}
+
 .syntax-highlight span {
 	font-family: "Consolas", "Courier New", "Courier", "FreeMono", monospace;
 	font-size: 1em;
