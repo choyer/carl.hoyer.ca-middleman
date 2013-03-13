@@ -36,10 +36,11 @@ end
 # Blog
 ###
 activate :blog do |blog|
-  blog.layout        = "article"
-  blog.taglink       = "meta/:tag.html"
-  blog.tag_template  = "tag.html"
-  blog.year_template = "calendar.html"
+  blog.layout             = "article"
+  blog.taglink            = "meta/:tag.html"
+  blog.tag_template       = "tag.html"
+  blog.year_template      = "calendar.html"
+  blog.default_extension  = ".markdown"
 end
 
 ###
@@ -77,15 +78,10 @@ page "/atom.xml", :layout => "atom.xml"
 # Helpers
 ###
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+#helpers do
+#
+#end
 
 # specify asset directories
 set :js_dir, 'js'
