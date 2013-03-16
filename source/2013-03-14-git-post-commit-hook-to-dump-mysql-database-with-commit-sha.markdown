@@ -22,9 +22,15 @@ Here is my `.git/hooks/post-commit` to do that:
 current_time=$(date +%F-%H_%M_%S)
 git_commit_id=$(git rev-parse --short HEAD)
 
+# CHANGE THIS: Database details
+db_user='root'
+db_pwd='root'
+db_name='khu-ee'
+dump_filename=$db_name-$current_time-$git_commit_id.sql
+
 # Go go database dump
 printf "==> Dumping DB ..."
-mysqldump -u root -p'your password here' database-name | cat > ~/db/database-name-$current_time-$git_commit_id.sql
-printf " Done. [database-name-$current_time-$git_commit_id.sql]\n\n"
+/Applications/MAMP/Library/bin/mysqldump --add-drop-table --user=$db_user --password=$db_pwd $db_name | cat > ~/Sites/local_krisholm_com/db/$dump_filename
+printf " Done. [$dump_filename]\n\n"
 ```
 Replace mysql login details and *database-name* with your settings.
