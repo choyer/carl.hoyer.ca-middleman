@@ -12,3 +12,6 @@
 
 # Ignore Sass' cache
 /.sass-cache
+
+# Ignore s3_sync credentials
+.s3_sync
