@@ -16,21 +16,34 @@ set :markdown, :layout_engine => :erb,
 # Sync to AWS and Cloudfront
 ###
 
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                = 'carl.hoyer.ca' # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                = 'us-east-1'     # The AWS region for your bucket.
-  s3_sync.aws_access_key_id     = ENV['AWS_ACCESS_KEY']
-  s3_sync.aws_secret_access_key = ENV['AWS_SECRET']
-  s3_sync.delete                = true # We delete stray files by default.
-  s3_sync.after_build           = true # We chain after the build step by default. This may not be your desired behavior...
-end
+EXCON_DEBUG=true
 
-activate :cloudfront do |cf|
-  cf.access_key_id = ENV['AWS_ACCESS_KEY']
-  cf.secret_access_key = ENV['AWS_SECRET']
-  cf.distribution_id = 'EELN0AZN02QRE'
-  cf.filter = /\.html$/i
-end
+ activate :s3_sync do |s3_sync|
+   s3_sync.bucket                     = 'carl.hoyer.ca' # The name of the S3 bucket you are targetting. This is globally unique.
+   s3_sync.region                     = 'us-east-1'     # The AWS region for your bucket.
+   s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY']
+   s3_sync.aws_secret_access_key      = ENV['AWS_SECRET']
+   s3_sync.delete                     = true # We delete stray files by default.
+   s3_sync.after_build                = true # We chain after the build step by default. This may not be your desired behavior...
+   s3_sync.prefer_gzip                = false
+   s3_sync.path_style                 = true
+   s3_sync.reduced_redundancy_storage = false
+   s3_sync.acl                        = 'public-read'
+   s3_sync.encryption                 = false
+   s3_sync.prefix                     = ''
+   s3_sync.version_bucket             = false
+ end
+
+ activate :cloudfront do |cf|
+   cf.access_key_id = ENV['AWS_ACCESS_KEY']
+   cf.secret_access_key = ENV['AWS_SECRET']
+   cf.distribution_id = 'EELN0AZN02QRE'
+   cf.filter = /\.html$/i
+ end
+
+ after_s3_sync do |files_by_status|
+   invalidate files_by_status[:updated]
+ end
 
 ###
 # Blog
@@ -47,7 +60,7 @@ end
 # Code hilighting via pygments
 ###
 activate :syntax,
-         :cssclass => "syntax-highlight"
+         :css_class => "syntax-highlight"
 
 ###
 # Compass
